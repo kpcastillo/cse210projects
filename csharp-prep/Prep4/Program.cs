@@ -6,7 +6,8 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Enter a list of numbers, Type 0 when finished.");
-
+        
+    //declaring the new list
         List<int> numbers = new List<int>();
 
         int  userNumber = -1;
