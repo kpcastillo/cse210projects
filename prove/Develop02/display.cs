@@ -6,7 +6,6 @@ using System;
 
         public void DisplayJournal()
         {
-            Console.WriteLine("Displaying your Journal.");
 
             foreach(NewEntry entry in _entries)
             {

@@ -11,6 +11,6 @@ using System;
         public void ShowDateAndEntry()
         {
 
-            Console.WriteLine($"{_date}, {_prompt}: {_entry}");
+            Console.WriteLine($"{_date} | {_prompt} | {_entry}");
         }
     }
