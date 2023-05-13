@@ -1,23 +1,21 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-
-class Program
+partial class Program
 {
-    static void Main(string[] args)
+        static void Main(string[] args)
     {
+        Display myJournal = new Display();
 
         List<string> promptList = new List<string>{
                 "What was the best part of your day?",
                 "What was the one challenging part of your day?",
                 "What is something you are thankfull for today?",
-                "Chicago"                    
+                "What made you feel the spirit today? ",    
+                "What was your main goal for today?"                
             };
     
-        Random random = new Random(); 
-        int index = random.Next(promptList.Count);
-        string prompt = promptList[index];
-
+        
         Console.WriteLine("Welcome to the journal program!");
         Console.WriteLine("Please select one of the following: ");
         Console.WriteLine("1. Write");
@@ -26,7 +24,7 @@ class Program
         Console.WriteLine("4. Save");
         Console.WriteLine("5. Quit");
         Console.WriteLine("What would you like to do? ");
-        int choice = Console.Read();
+        int choice = int.Parse(Console.ReadLine());
 
         while (choice != 5)
         {
@@ -34,23 +32,35 @@ class Program
             //Write a new entry - Show the user a random prompt (from a list that you create), 
             //and save their response, the prompt, and the date as an Entry.
             {
-                //Console.WriteLine(promptList[index]);
+                Random random = new Random(); 
+                int index = random.Next(promptList.Count);
+                string prompt = promptList[index];
+
                 Console.WriteLine(prompt);
 
                 NewEntry entry1 = new NewEntry();
                 entry1._date = DateTime.Now.ToShortDateString();
                 entry1._entry = Console.ReadLine();
                 entry1._prompt = prompt;
+                myJournal._entries.Add(entry1);
+
+                //foreach(NewEntry in Display); 
+              //  {
+              //      promptFile.Add();
+               // }
+                
+                Console.WriteLine("Thank you for your entry.\n");
+                
             }
             else if (choice == 2)
             //Display the journal - Iterate through all entries in the journal
             // and display them to the screen.
             {
-                Console.WriteLine("Displaying yoye journal entries: ");
+                Console.WriteLine("Displaying your journal entries: ");
                 Console.WriteLine();
-                Display myJournal = new Display();
-                //myJournal._entry.Add(entry1);
+                
                 myJournal.DisplayJournal();
+                Console.WriteLine();
 
             }
             else if (choice ==3)
@@ -59,16 +69,20 @@ class Program
             {
                 Console.WriteLine("What is the filename? ");
                 string fileRead = Console.ReadLine();
+                Console.WriteLine($"Displaying from file {fileRead}....\n ");
+                
+                
 
                 string[] lines = System.IO.File.ReadAllLines(fileRead);
-
                 foreach (string line in lines)
                 {
-                    string[] parts = line.Split(".");
-
-                    string date = parts[0];
-                    string prmpt = parts[1];
-                    string entry = parts[1];
+                    Console.WriteLine(line);
+                    Console.WriteLine();
+                 //   string[] parts = line.Split("|");
+     //
+  //                  string date = parts[0];
+    //                string prmpt = parts[1];
+      //              string entry = parts[1];
                 }
 
             }
@@ -79,20 +93,23 @@ class Program
             {
                 Console.WriteLine("What is the filename? ");
                 string fileName = Console.ReadLine();
+                Console.WriteLine($"Saving your journal into {fileName} file.\n");
 
                 using (StreamWriter outputFile = new StreamWriter(fileName))
                 {
-
-                    outputFile.WriteLine();
                     
+                    outputFile.WriteLine(myJournal);
+                    //outputFile.WriteLine(myJournal._entries);            
                 }
                 
             }
             
             Console.WriteLine("What would you like to do? ");
-            choice = Console.Read();
+            choice = int.Parse(Console.ReadLine());
 
         }
+
+        Console.WriteLine("Good Bye!");
 
     }
 }
