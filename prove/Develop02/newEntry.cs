@@ -8,9 +8,12 @@ using System;
 
         public string _prompt;
 
+        public string _scripture;
+
         public void ShowDateAndEntry()
         {
 
             Console.WriteLine($"{_date} | {_prompt} | {_entry}");
+            Console.WriteLine($"Scripture of the day: {_scripture}");
         }
     }

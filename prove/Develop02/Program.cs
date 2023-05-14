@@ -14,6 +14,13 @@ partial class Program
                 "What made you feel the spirit today? ",    
                 "What was your main goal for today?"                
             };
+        List<string> scriptures = new List<string>{
+                "Jeremiah 17:7 Blessed is the man that trusteth in the Lord, and whose hope the Lord is.",
+                "Psalm 34:4 I sought the Lord, and he heard me, and delivered me from all my fears.",
+                "Hebrews 11:1 Now faith is the substance of things hoped for, the evidence of things not seen.",
+                "Romans 15:13 Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.",    
+                "Alma 36:3 Whosoever shall put their trust in God shall be supported in their trials, and their troubles, and their afflictions, and shall be lifted up at the last day."                
+            };
     
         
         Console.WriteLine("Welcome to the journal program!");
@@ -29,8 +36,8 @@ partial class Program
         while (choice != 5)
         {
             if(choice == 1)
-            //Write a new entry - Show the user a random prompt (from a list that you create), 
-            //and save their response, the prompt, and the date as an Entry.
+            //After writing an entry user will have a scripture displayed. This will be an encouraging scripture which will make two things: 
+            //Make the writter feel good and encourage him/her to come back, and remind the writer to study the scriptures.
             {
                 Random random = new Random(); 
                 int index = random.Next(promptList.Count);
@@ -38,23 +45,24 @@ partial class Program
 
                 Console.WriteLine(prompt);
 
+                Random randomScripture = new Random(); 
+                int indexS = random.Next(scriptures.Count);
+                string scripture = scriptures[indexS];
+
                 NewEntry entry1 = new NewEntry();
                 entry1._date = DateTime.Now.ToShortDateString();
                 entry1._entry = Console.ReadLine();
                 entry1._prompt = prompt;
+                entry1._scripture = scripture;
                 myJournal._entries.Add(entry1);
 
-                //foreach(NewEntry in Display); 
-              //  {
-              //      promptFile.Add();
-               // }
-                
+            //After writing an entry user will have a scripture displayed. This will be an encouraging scripture which will make two things: 
+            //Make the writter feel good and encourage him/her to come back, and remind the writer to study the scriptures.
                 Console.WriteLine("Thank you for your entry.\n");
+                Console.WriteLine($"Your scripture of the day is: {scripture}");
                 
             }
             else if (choice == 2)
-            //Display the journal - Iterate through all entries in the journal
-            // and display them to the screen.
             {
                 Console.WriteLine("Displaying your journal entries: ");
                 Console.WriteLine();
@@ -64,8 +72,6 @@ partial class Program
 
             }
             else if (choice ==3)
-            //Load the journal from a file - Prompt the user for a filename and then load the journal 
-            //(a complete list of entries) from that file. This should replace any entries currently stored the journal.
             {
                 Console.WriteLine("What is the filename? ");
                 string fileRead = Console.ReadLine();
@@ -78,18 +84,10 @@ partial class Program
                 {
                     Console.WriteLine(line);
                     Console.WriteLine();
-                 //   string[] parts = line.Split("|");
-     //
-  //                  string date = parts[0];
-    //                string prmpt = parts[1];
-      //              string entry = parts[1];
                 }
 
             }
             else if (choice == 4)
-            //Save the journal to a file - Prompt the user for a filename and then save the current journal 
-            //(the complete list of entries) to that file location.
-            
             {
                 Console.WriteLine("What is the filename? ");
                 string fileName = Console.ReadLine();
@@ -98,8 +96,11 @@ partial class Program
                 using (StreamWriter outputFile = new StreamWriter(fileName))
                 {
                     
-                    outputFile.WriteLine(myJournal);
-                    //outputFile.WriteLine(myJournal._entries);            
+                    foreach(NewEntry entry in myJournal._entries){
+                        outputFile.WriteLine(entry);
+
+                    }
+                                
                 }
                 
             }
