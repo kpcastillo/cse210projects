@@ -56,10 +56,8 @@ partial class Program
                 entry1._scripture = scripture;
                 myJournal._entries.Add(entry1);
 
-            //After writing an entry user will have a scripture displayed. This will be an encouraging scripture which will make two things: 
-            //Make the writter feel good and encourage him/her to come back, and remind the writer to study the scriptures.
                 Console.WriteLine("Thank you for your entry.\n");
-                Console.WriteLine($"Your scripture of the day is: {scripture}");
+                Console.WriteLine($"Your scripture of the day is: {scripture}\n");
                 
             }
             else if (choice == 2)
