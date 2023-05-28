@@ -9,10 +9,10 @@ public class Reference{
 
     } 
     public Reference (string book, int chapter, int verse, int secondVerse){
-        book = _book;
-        chapter = _chapter;
-        verse = _verse;
-        secondVerse = _secondVerse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _secondVerse = secondVerse;
 
     }
     public void GetReference(){

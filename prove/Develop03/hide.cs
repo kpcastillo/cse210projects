@@ -6,45 +6,41 @@ public class HideWord{
     public HideWord (){
     }
     public HideWord (Reference reference, Scripture scripture){
-        scripture = _scripture;
-        reference = _reference;
+        _scripture = scripture;
+        _reference = reference;
     }
     
-    public void HideWordFromSentece (){
+    private void HideWordFromSentece (){
         
+        Scripture hideScripture = new Scripture();
+        string[] words = hideScripture.stringToList();
+        int sLenght = hideScripture.wordCount();
 
         Console.Clear();
         Console.WriteLine($"{_reference} {_scripture}");
 
         
-       // Random random = new Random(); 
-         //   int index = random.Next(wordsSplit.Length);
-           // string words = wordsSplit[index];
+       Random random = new Random(); 
                 //string hiddenWord = words.Replace("_");
-                //string hiddenWord = words.Insert(0, "_");
         
        
-      //  while (scriptureLenght > 0){
+        while (sLenght > 0){
             Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
             string input = Console.ReadLine().ToLower();
 
             if (input == "quit")
-                return;
-            
-            
+                break;
 
-      //  }
-        //if statement.
+            int wordsToHide = random.Next(1, sLenght + 1);
+            string [] wordsHidden = new string[sLenght];
+            for (int i = 0; i < sLenght; i++){
+                if ( i < wordsToHide)
+                    wordsHidden[i] = "_____";
+                else
+                    wordsHidden[i] = words[i - wordsToHide];
+            }  
 
-        // This will start by displaying "AAA" and waiting for the user to press the enter key
-        //Console.WriteLine("AAA");
-        //Console.ReadLine();
-
-        // This will clear the console
-        //Console.Clear();
-
-        // This will show "BBB" in the console where "AAA" used to be
-        //Console.WriteLine("BBB");
+       }
         
     }
 
