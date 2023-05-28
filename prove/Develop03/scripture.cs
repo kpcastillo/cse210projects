@@ -5,7 +5,7 @@ public class Scripture{
     public Scripture (){
     }
     public Scripture (string scripture){
-        scripture = _scripture;
+        _scripture = scripture;
        
     }
     public string[] stringToList (){
@@ -19,4 +19,9 @@ public class Scripture{
         return scriptureLenght;
     }
 
+    // public void DisplayScripture(){
+    //     string[] scripToHide = stringToList();
+    //     int lenght = wordCount();
+        
+    // }
 }
