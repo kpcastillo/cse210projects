@@ -10,7 +10,7 @@ public class HideWord{
         _reference = reference;
     }
     public void HideWordFromSentece (){
-
+        Reference ref1 = new Reference();
         Scripture hideScripture = new Scripture();
         _scripture = hideScripture;
         string[] words = hideScripture.stringToList();
@@ -19,7 +19,7 @@ public class HideWord{
        Random random = new Random(); 
                 //string hiddenWord = words.Replace("_");
         Console.Clear();
-        Console.WriteLine($"{_reference} {hideScripture}");
+        Console.WriteLine($"{ref1} {hideScripture}");
         Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
         string input = Console.ReadLine().ToLower();
        
