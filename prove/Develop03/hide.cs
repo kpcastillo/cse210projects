@@ -9,22 +9,20 @@ public class HideWord{
         _scripture = scripture;
         _reference = reference;
     }
-    
-    private void HideWordFromSentece (){
-        
+    public void HideWordFromSentece (){
+
         Scripture hideScripture = new Scripture();
+        _scripture = hideScripture;
         string[] words = hideScripture.stringToList();
         int sLenght = hideScripture.wordCount();
-
-        Console.Clear();
-        Console.WriteLine($"{_reference} {_scripture}");
-
         
        Random random = new Random(); 
                 //string hiddenWord = words.Replace("_");
         
        
         while (sLenght > 0){
+            Console.Clear();
+            Console.WriteLine($"{_reference} {hideScripture}");
             Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
             string input = Console.ReadLine().ToLower();
 

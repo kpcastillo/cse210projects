@@ -3,6 +3,7 @@ using System.Collections.Generic;
 public class Scripture{
     private string _scripture; 
     public Scripture (){
+        _scripture = "Now faith is the substance of things hoped for, the evidence of things not seen";
     }
     public Scripture (string scripture){
         _scripture = scripture;
