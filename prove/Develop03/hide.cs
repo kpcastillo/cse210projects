@@ -18,14 +18,13 @@ public class HideWord{
         
        Random random = new Random(); 
                 //string hiddenWord = words.Replace("_");
-        
+        Console.Clear();
+        Console.WriteLine($"{_reference} {hideScripture}");
+        Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
+        string input = Console.ReadLine().ToLower();
        
         while (sLenght > 0){
-            Console.Clear();
-            Console.WriteLine($"{_reference} {hideScripture}");
-            Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
-            string input = Console.ReadLine().ToLower();
-
+           
             if (input == "quit")
                 break;
 
@@ -36,12 +35,7 @@ public class HideWord{
                     wordsHidden[i] = "_____";
                 else
                     wordsHidden[i] = words[i - wordsToHide];
-            }  
-
-       }
-        
+            } 
+       }   
     }
-
-    
-
 }
