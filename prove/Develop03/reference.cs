@@ -22,13 +22,13 @@ public class Reference{
 
     }
     
-    public void GetReference(){
+    public string GetReference(){
         if (_secondVerse == 0){
-            Console.WriteLine($"{_book}, {_chapter}:{_verse}.");
+           return $"{_book}, {_chapter}:{_verse}.";
 
         }
         else{
-            Console.WriteLine($"{_book}, {_chapter}:{_verse}-{_secondVerse}.");
+            return $"{_book}, {_chapter}:{_verse}-{_secondVerse}.";
         }
     
 

@@ -19,7 +19,7 @@ public class HideWord{
        Random random = new Random(); 
                 //string hiddenWord = words.Replace("_");
         Console.Clear();
-        Console.WriteLine($"{ref1} {hideScripture}");
+        Console.WriteLine($"{ref1.GetReference()} {hideScripture.DisplayScripture()}");
         Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
         string input = Console.ReadLine().ToLower();
        

@@ -20,9 +20,8 @@ public class Scripture{
         return scriptureLenght;
     }
 
-    // public void DisplayScripture(){
-    //     string[] scripToHide = stringToList();
-    //     int lenght = wordCount();
+    public String DisplayScripture(){
+        return _scripture;
         
-    // }
+    }
 }
