@@ -30,12 +30,17 @@ public class HideWord{
 
             int wordsToHide = random.Next(1, sLenght + 1);
             string [] wordsHidden = new string[sLenght];
+
             for (int i = 0; i < sLenght; i++){
+
                 if ( i < wordsToHide)
                     wordsHidden[i] = "_____";
                 else
                     wordsHidden[i] = words[i - wordsToHide];
             } 
+            Console.Clear();
+            Console.WriteLine(wordsHidden);
+            sLenght -= wordsToHide;
        }   
     }
 }
