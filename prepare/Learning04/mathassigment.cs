@@ -1,7 +1,7 @@
 public class MathAssigment : Assigment{
     private string _textbookSection;
     private string _problems;
-    public MathAssigment(string textbookSection, string problems) : Assigment(string studentName, string topic){
+    public MathAssigment(string studentName, string topic, string textbookSection, string problems) : base(studentName, topic){
         _textbookSection = textbookSection;
         _problems = problems;
 
