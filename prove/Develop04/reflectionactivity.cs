@@ -1,6 +1,26 @@
 public class ReflectionActivity : Activity{
+
+    private string[] _questions;
+    private string[] _fixedQuestions;
+    public ReflectionActivity(){}
+    public ReflectionActivity(string activityName, int time, string description): base (activityName, time, description){
+        description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+
+    }
+    public string RandomReflection(){
+        string[] reflectionPrompt = new string[]{
+            "Think of a time when you stood up for someone else.",
+          "Think of a time when you did something really difficult.",
+            "Think of a time when you helped someone in need.",
+            "Think of a time when you did something truly selfless."
+        };
+        return "";
+
+    }
+
+
     //The activity should begin with the standard starting message and prompt for the duration that is used by all activities.
-// The description of this activity should be something like: "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
+
 // After the starting message, select a random prompt to show the user such as:
 // Think of a time when you stood up for someone else.
 // Think of a time when you did something really difficult.

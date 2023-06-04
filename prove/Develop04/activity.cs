@@ -3,6 +3,7 @@ public class Activity{
     protected string _activityName;
     protected int _time;
     protected string _description;
+    protected string _message;
     public Activity(){}
     public Activity(string activityName, int time, string description){
         _activityName = activityName;
