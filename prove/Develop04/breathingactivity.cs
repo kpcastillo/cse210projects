@@ -1,11 +1,16 @@
 public class BreathingActivity : Activity{
 
-    public BreathingActivity(string activityName, int time, string description): base (activityName, time, description){
-        description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+    public BreathingActivity(): base (){
+        _activityName = "BreathingActivity";
+        _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+
     }
 
-    public int SetAcivityTime(){
-        return 1;
+    public void DisplayBreathingAct(){
+        Activity act1 = new Activity();
+        int time = act1.StartingMsg();
+        Console.WriteLine(act1);
+        
     }
     
 

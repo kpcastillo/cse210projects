@@ -1,10 +1,14 @@
 public class ListingActivity : Activity{
     private string[] _prompts;
-    public ListingActivity(){}
-    public ListingActivity(string activityName, int time, string description): base (activityName, time, description){
-        description =  "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+    public ListingActivity():base (){
+        _activityName = "Listing Activity";
+        _description =  "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+
 
     }
+    //public ListingActivity(string activityName, int time, string description): base (activityName, time, description){
+      //  
+    //}
     public string DisplayRandomPrompt(){
         string [] prompts = new string[]{
             "Who are people that you appreciate?",

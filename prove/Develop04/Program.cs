@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to the mindful program\n choose friom the menu");
+        Console.WriteLine("Welcome to the mindful program\nChoose from the menu");
         Console.WriteLine("1. Breathing activity.");
         Console.WriteLine("2. Reflection activity");
         Console.WriteLine("3.Listing activity");
@@ -15,7 +15,7 @@ class Program
         while (userInput != 4){
 
             if (userInput == 1){
-                continue;
+                BreathingActivity breath = new BreathingActivity();
 
             }
             else if(userInput == 2){
