@@ -16,6 +16,7 @@ class Program
 
             if (userInput == 1){
                 BreathingActivity breath = new BreathingActivity();
+                breath.DisplayBreathingAct();
 
             }
             else if(userInput == 2){

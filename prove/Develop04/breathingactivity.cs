@@ -10,7 +10,18 @@ public class BreathingActivity : Activity{
         Activity act1 = new Activity();
         int time = act1.StartingMsg();
         Console.WriteLine(act1);
-        
+
+        DateTime startTime = DateTime.Now;
+        DateTime endtime = startTime.AddSeconds(time);
+
+        while (startTime < endtime)
+       {
+           Console.Write($"Breathe in... {act1.Countdown}");
+           Thread.Sleep(1000);
+           Console.Write("\b \b");
+       }
+       EndingMsg();
+
     }
     
 

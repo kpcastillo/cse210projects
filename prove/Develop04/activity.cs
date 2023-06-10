@@ -26,10 +26,10 @@ public class Activity{
         //Then, it should tell the user to prepare to begin and pause for several seconds.
         Console.WriteLine("Prepare to begin");
         Console.Clear();
-        Animation(5000);
+        Animation();
         return _time;
     }
-    public void Animation(int time)
+    public void Animation()
     {
 
        List<string> animation = new List<string>{
@@ -37,7 +37,7 @@ public class Activity{
            "|","/", "-","\\"
        };
        DateTime startTime = DateTime.Now;
-       DateTime endingTime = startTime.AddSeconds(12);
+       DateTime endingTime = startTime.AddSeconds(7);
 
        int i = 0;
 
@@ -56,8 +56,9 @@ public class Activity{
        }
 
     }
-    public void Countdown(int time)
+    public void Countdown()
     {
+        int time = 5;
         for (int i=time; i>0; i--){
             Console.Write(i);
             Thread.Sleep(100);
@@ -71,7 +72,7 @@ public class Activity{
         Thread.Sleep(5000);
         Console.WriteLine($"You completed the {_activityName} for {_time} seconds.");
         Thread.Sleep(5000);     
-        Animation(5000);
+        Animation();
     }
     public string ChooseRandom(string[] promptList){
         Random random = new Random(); 
