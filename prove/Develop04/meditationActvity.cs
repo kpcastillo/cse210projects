@@ -24,15 +24,16 @@ public class MeditationActivity : Activity{
            actM.Animation();
            Thread.Sleep(1000); 
        }
-       SoundPlayer player = new SoundPlayer(@"C:\bell.wav");
-        try
-        {
-            player.Play();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error playing sound: " + ex.Message);
-        }
+       Console.Beep();
+    //    SoundPlayer player = new SoundPlayer(@"C:\bell.wav");
+    //     try
+    //     {
+    //         player.Play();
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Console.WriteLine("Error playing sound: " + ex.Message);
+    //     }
 
        EndingMsg("Meditation Activity", time);
     }
