@@ -53,21 +53,6 @@ public class Activity{
     }
     public void Countdown()
     {
-        // Console.Write(5);
-        // Thread.Sleep(1000);
-        // Console.Write("\b \b");
-        // Console.Write(4);
-        // Thread.Sleep(1000);
-        // Console.Write("\b \b");
-        // Console.Write(3);
-        // Thread.Sleep(1000);
-        // Console.Write("\b \b");
-        // Console.Write(2);
-        // Thread.Sleep(1000);
-        // Console.Write("\b \b");
-        // Console.Write(1);
-        // Thread.Sleep(1000);
-        // Console.Write("\b \b");
         for (int i=5; i>0; i--){
             Console.Write(i);
             Thread.Sleep(1000);
