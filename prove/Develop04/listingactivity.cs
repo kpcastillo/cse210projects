@@ -1,14 +1,14 @@
 public class ListingActivity : Activity{
-    private string[] _prompts;
+   // private string[] _prompts;
     public ListingActivity():base (){
         _activityName = "Listing Activity";
         _description =  "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
 
     }
-    //public ListingActivity(string activityName, int time, string description): base (activityName, time, description){
-      //  
-    //}
+    public ListingActivity(string activityName, string description): base (activityName, description){
+       
+    }
     public string DisplayRandomPrompt(){
         string [] prompts = new string[]{
             "Who are people that you appreciate?",
@@ -17,16 +17,38 @@ public class ListingActivity : Activity{
             "When have you felt the Holy Ghost this month?",
             "Who are some of your personal heroes?"
         };
-        return "";
+        string rPrompt = ChooseRandom(prompts);
+        return rPrompt;
     }
     public int InputCount(){
         return 1;
     }
-    //The activity should begin with the standard starting message and prompt for the duration that is used by all activities.
-// After the starting message, select a random prompt to show the user 
-// After displaying the prompt, the program should give them a countdown of several seconds to begin thinking about the prompt. 
-//Then, it should prompt them to keep listing items.
-// The user lists as many items as they can until they they reach the duration specified by the user at the beginning.
-// The activity them displays back the number of items that were entered.
-// The activity should conclude with the standard finishing message for all activities.
+    public void DisplayListing(){
+        Activity actL = new Activity();
+        int time = actL.StartingMsg("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+        Console.Clear();
+        Console.WriteLine(DisplayRandomPrompt());
+        Thread.Sleep(2000);
+        actL.Countdown();
+        Thread.Sleep(1000);
+        DateTime startTime = DateTime.Now;
+        DateTime endtime = startTime.AddSeconds(time);
+        Console.WriteLine("Press Enter to continue...");
+        Console.ReadLine();
+
+        int entries = 0;
+
+        while (DateTime.Now < endtime)
+       {
+           Console.WriteLine("\nWrite your entry. ");
+           Console.ReadLine();
+
+           entries++;
+       }
+       Console.WriteLine($"You wrote {entries} entries.");
+       Thread.Sleep(2000);
+       EndingMsg("Listing Activity", time);
+       
+
+    }
 }

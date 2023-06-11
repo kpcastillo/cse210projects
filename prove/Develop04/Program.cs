@@ -24,7 +24,8 @@ class Program
                 reflection1.DisplayReflection();
             }
             else if(userInput == 3){
-                continue;
+                ListingActivity listing1 = new ListingActivity();
+                listing1.DisplayListing();
             }
             else{
                 Console.WriteLine("Not a valid coice");

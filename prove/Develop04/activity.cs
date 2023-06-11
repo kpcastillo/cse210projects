@@ -63,7 +63,7 @@ public class Activity{
     {
         Console.Clear();
         Console.WriteLine($"\nGood job.");
-        Thread.Sleep(3000);
+        Thread.Sleep(2000);
         Console.WriteLine($"You completed the {activityName} for {time} seconds.");
         Thread.Sleep(3000);     
         Animation();
