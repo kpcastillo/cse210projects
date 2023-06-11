@@ -3,29 +3,24 @@ public class Activity{
     protected string _activityName;
     protected int _time;
     protected string _description;
-    protected string _message;
-    protected string[] _listForRandom;
+  
     public Activity(){}
     public Activity(string activityName, string description){
         _activityName = activityName;
         _description = description;
     }
-    // public Activity(string activityName, int time, string description){
-    //     _activityName = activityName;
-    //     _time = time;
-    //     _description = description;
-    // }
-    public int StartingMsg(){
+  
+    public int StartingMsg(string activityN, string aDescription){
         //provides the name of the activity, & a description
-        Console.WriteLine($"Welcome to the {_activityName} ");
-        Console.WriteLine($"{_description}");
+        Console.WriteLine($"Welcome to the {activityN} ");
+        Console.WriteLine($"{aDescription}");
         //and asks for and sets the duration of the activity in seconds. 
         Console.WriteLine("How many seconds would you like to set for the activity?");
         string time = Console.ReadLine();
         _time = int.Parse(time);
         //Then, it should tell the user to prepare to begin and pause for several seconds.
-        Console.WriteLine("Prepare to begin");
         Console.Clear();
+        Console.WriteLine("Prepare to begin");
         Animation();
         return _time;
     }
@@ -37,11 +32,11 @@ public class Activity{
            "|","/", "-","\\"
        };
        DateTime startTime = DateTime.Now;
-       DateTime endingTime = startTime.AddSeconds(7);
+       DateTime endingTime = startTime.AddSeconds(8);
 
        int i = 0;
 
-       while (startTime < endingTime)
+       while (DateTime.Now < endingTime)
        {
            string a = animation[i];
            Console.Write(a);
@@ -58,20 +53,34 @@ public class Activity{
     }
     public void Countdown()
     {
-        int time = 5;
-        for (int i=time; i>0; i--){
+        // Console.Write(5);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(4);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(3);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(2);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(1);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        for (int i=5; i>0; i--){
             Console.Write(i);
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
             Console.Write("\b \b");
-        }
-        Console.WriteLine("Done.");
+         }
     }
-    public void EndingMsg()
+    public void EndingMsg(string activityName, int time)
     {
-        Console.WriteLine($"Good job.");
-        Thread.Sleep(5000);
-        Console.WriteLine($"You completed the {_activityName} for {_time} seconds.");
-        Thread.Sleep(5000);     
+        Console.Clear();
+        Console.WriteLine($"\nGood job.");
+        Thread.Sleep(3000);
+        Console.WriteLine($"You completed the {activityName} for {time} seconds.");
+        Thread.Sleep(3000);     
         Animation();
     }
     public string ChooseRandom(string[] promptList){

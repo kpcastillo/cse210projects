@@ -5,22 +5,33 @@ public class BreathingActivity : Activity{
         _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
 
     }
+    public BreathingActivity(string activityName, string description): base (){
+        _activityName = activityName;
+        _description = description;
+
+    }
 
     public void DisplayBreathingAct(){
         Activity act1 = new Activity();
-        int time = act1.StartingMsg();
-        Console.WriteLine(act1);
+        int time = act1.StartingMsg("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. \nClear your mind and focus on your breathing.");
+        //Console.WriteLine(act1.StartingMsg());
+      
+
 
         DateTime startTime = DateTime.Now;
         DateTime endtime = startTime.AddSeconds(time);
 
-        while (startTime < endtime)
+        while (DateTime.Now < endtime)
        {
-           Console.Write($"Breathe in... {act1.Countdown}");
-           Thread.Sleep(1000);
-           Console.Write("\b \b");
+           Console.WriteLine($"\nBreathe in... {Countdown}");
+           //Console.WriteLine($"{act1.Countdown}");
+           Thread.Sleep(3000);
+           //Console.Write("\b \b");
+           Console.WriteLine($"\nBreathe out... {Countdown}");
+           Thread.Sleep(3000);
+           //Console.Write("\b \b");
        }
-       EndingMsg();
+       EndingMsg("Brething Activity", time);
 
     }
     
