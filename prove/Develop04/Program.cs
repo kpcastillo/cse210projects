@@ -20,7 +20,8 @@ class Program
 
             }
             else if(userInput == 2){
-                continue;
+                ReflectionActivity reflection1 = new ReflectionActivity();
+                reflection1.DisplayReflection();
             }
             else if(userInput == 3){
                 continue;

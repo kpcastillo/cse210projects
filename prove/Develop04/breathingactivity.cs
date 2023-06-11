@@ -14,16 +14,13 @@ public class BreathingActivity : Activity{
     public void DisplayBreathingAct(){
         Activity act1 = new Activity();
         int time = act1.StartingMsg("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. \nClear your mind and focus on your breathing.");
-        //Console.WriteLine(act1.StartingMsg());
-      
-
 
         DateTime startTime = DateTime.Now;
         DateTime endtime = startTime.AddSeconds(time);
 
         while (DateTime.Now < endtime)
        {
-           Console.WriteLine($"\nBreathe in... {Countdown}");
+           Console.WriteLine($"\nBreathe in... {act1.Countdown}");
            //Console.WriteLine($"{act1.Countdown}");
            Thread.Sleep(3000);
            //Console.Write("\b \b");
@@ -32,13 +29,5 @@ public class BreathingActivity : Activity{
            //Console.Write("\b \b");
        }
        EndingMsg("Brething Activity", time);
-
     }
-    
-
-    //The activity should begin with the standard starting message and prompt for the duration that is used by all activities.
-    // After the starting message, the user is shown a series of messages alternating between "Breathe in..." and "Breathe out..."
-    // After each message, the program should pause for several seconds and show a countdown.
-    // It should continue until it has reached the number of seconds the user specified for the duration.
-    // The activity should conclude with the standard finishing message for all activities.
 }

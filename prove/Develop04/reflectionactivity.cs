@@ -1,24 +1,25 @@
 public class ReflectionActivity : Activity{
 
-    private string[] _reflectionPrompts;
-    private string[] _questions;
+    // private string[] _reflectionPrompts;
+    // private string[] _questions;
     public ReflectionActivity(): base (){
         _activityName = "Reflection Activity";
         _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-
-
     }
-    //public ReflectionActivity(string activityName, int time, string description): base (activityName, time, description){
-      //  
-    //}
+    public ReflectionActivity(string activityName, string description): base (activityName, description){
+        _activityName = activityName;
+        _description = description;
+  
+    }
     public string RandomReflection(){
-        string[] reflectionPrompt = new string[]{
+        string[] reflectionPrompts = new string[]{
             "Think of a time when you stood up for someone else.",
             "Think of a time when you did something really difficult.",
             "Think of a time when you helped someone in need.",
-            "Think of a time when you did something truly selfless."
+            "Think of a time when you did something truly selfless.",
         };
-        return "";
+        string selectReflection = ChooseRandom(reflectionPrompts);
+        return selectReflection;
     }
     public string DisplayQuestions(){
             string [] questions = new string[]{
@@ -32,15 +33,36 @@ public class ReflectionActivity : Activity{
                 "What did you learn about yourself through this experience?",
                 "How can you keep this experience in mind in the future?"
             };
-            return "";
+            string selectQuestion =ChooseRandom(questions);
+            return selectQuestion;
 
     }
+    public void DisplayReflection(){
+        Activity actR = new Activity();
+        int time = actR.StartingMsg("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. \nThis will help you recognize the power you have and how you can use it in other aspects of your life.");
+        Console.Clear();
+        Console.WriteLine(RandomReflection());
+        actR.Countdown();
+        Thread.Sleep(1000);
+        DateTime startTime = DateTime.Now;
+        DateTime endtime = startTime.AddSeconds(time);
 
+        while (DateTime.Now < endtime)
+       {
+           Console.WriteLine();
+           Console.WriteLine(DisplayQuestions());
+           Console.ReadLine();
+           actR.Animation();
+           Thread.Sleep(1000);
+           Console.WriteLine();
+           Console.WriteLine(DisplayQuestions());
+           Console.ReadLine();
+           actR.Animation();
+           Thread.Sleep(1000);
+           
+       }
+       EndingMsg("Reflection Activity", time);
+      
 
-//The activity should begin with the standard starting message and prompt for the duration that is used by all activities.
-// After the starting message, select a random prompt to show the user question
-// After displaying the prompt, the program should ask the to reflect on questions that relate to this experience. These questions should be pulled from a list
-// After each question the program should pause for several seconds before continuing to the next one. While the program is paused it should display a kind of spinner.
-// It should continue showing random questions until it has reached the number of seconds the user specified for the duration.
-// The activity should conclude with the standard finishing message for all activities.
+    }
 }
