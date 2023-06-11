@@ -1,4 +1,6 @@
 using System;
+using System.Media;
+using System.Windows;
 
 class Program
 {
@@ -8,11 +10,12 @@ class Program
         Console.WriteLine("1. Breathing activity.");
         Console.WriteLine("2. Reflection activity");
         Console.WriteLine("3.Listing activity");
-        Console.WriteLine("4.Quit.");
+        Console.WriteLine("4.Meditation activity");
+        Console.WriteLine("5.Quit.");
         string input = (Console.ReadLine());
         int userInput = int.Parse(input);
 
-        while (userInput != 4){
+        while (userInput != 5){
 
             if (userInput == 1){
                 BreathingActivity breath = new BreathingActivity();
@@ -27,6 +30,10 @@ class Program
                 ListingActivity listing1 = new ListingActivity();
                 listing1.DisplayListing();
             }
+            else if(userInput == 4){
+                MeditationActivity meditation1 = new MeditationActivity();
+                meditation1.DisplayMeditation();
+            }
             else{
                 Console.WriteLine("Not a valid coice");
             }
@@ -34,7 +41,8 @@ class Program
             Console.WriteLine("1. Breathing activity.");
             Console.WriteLine("2. Reflection activity.");
             Console.WriteLine("3.Listing activity.");
-            Console.WriteLine("4.Quit.");
+            Console.WriteLine("4.Meditation activity");
+            Console.WriteLine("5.Quit.");
             input = (Console.ReadLine());
             userInput = int.Parse(input);
 
