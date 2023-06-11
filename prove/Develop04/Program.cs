@@ -1,7 +1,10 @@
 using System;
 using System.Media;
 using System.Windows;
-
+//To show creativity I added a meditation activity
+// The meditation activity prompts the user to close their eyes and meditate
+// Until they hear the beep sound.
+// It Displays a starting message and an ending message like the other activities.
 class Program
 {
     static void Main(string[] args)
