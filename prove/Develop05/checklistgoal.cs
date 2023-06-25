@@ -9,12 +9,18 @@ public class ChecklistGoal : Goal
     public override int RecordEvent()
     {
         base.RecordEvent();
-        _timesDone++;
-        return _timesDone;
+        Console.WriteLine("How many times does this goal needs to be accomplished for a bonus? ");
+        _numOfTimes = int.Parse(Console.ReadLine());
+        Console.WriteLine("What is the bonus for accomplishing that many times? ");
+        _bonusPoints = int.Parse(Console.ReadLine());
+
+        
+        return _numOfTimes;
     }
 
     public override bool IsComplete()
     {
+        _timesDone++;
         return _timesDone >= _numOfTimes;
     }
     public override void PointsMessage()

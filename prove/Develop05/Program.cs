@@ -6,12 +6,8 @@ class Program
     static void Main(string[] args)
     {
         GoalTrack goalList = new GoalTrack();
-       // Console.WriteLine("Hello Develop05 World!");
-        //List<int> points = new List<int>{};
-        //int pointsCount = points.Sum(points[i]);
         Console.WriteLine("Welcome to the Goal Quest program.\n");
         int score = goalList.DisplayScore();
-        //Console.WriteLine(score);
         Console.WriteLine("\nMenu Options:\n1.Create New Goal\n2.List Goals");
         Console.WriteLine("3.Save Goals\n4.Load Goals\n5.Record Goals\n6.Quit");
         Console.WriteLine("Select From the menu: ");
@@ -25,31 +21,59 @@ class Program
                 Console.WriteLine("The types of goals are:\n1.Simple Goals\n2.Ethernal Goasl\n3.ChecklistGoals");
                 Console.WriteLine("Which type of goal would you like to create?");
                 int goalResponse = int.Parse(Console.ReadLine());
-            
-                if (goalResponse  == 1)
-                {
-                    SimpleGoal sGoal = new SimpleGoal();
-                    sGoal.RecordEvent();
-                    goalList.AddGoal(sGoal);
-                    continue;
 
-                }
-                else if (goalResponse == 2)
+                switch (goalResponse)
                 {
-                    EthernalGoal eGoal = new EthernalGoal();
-                    eGoal.RecordEvent();
-                    goalList.AddGoal(eGoal);
+                    case 1 :
+                
+                        SimpleGoal sGoal = new SimpleGoal();
+                        sGoal.RecordEvent();
+                        goalList.AddGoal(sGoal);
+                        break;
+
+                    case 2 :
+                
+                        EthernalGoal eGoal = new EthernalGoal();
+                        eGoal.RecordEvent();
+                        goalList.AddGoal(eGoal);
+                        break;
+                
+                    case 3 :
+                
+                        ChecklistGoal cGoal = new ChecklistGoal();
+                        cGoal.RecordEvent();
+                        goalList.AddGoal(cGoal);
+                        break;
                 }
-                else if (goalResponse == 3)
-                {
-                    ChecklistGoal cGoal = new ChecklistGoal();
-                    cGoal.RecordEvent();
-                    goalList.AddGoal(cGoal);
-                }
-                else
-                {
-                    Console.WriteLine("Not a valid choice.");
-                }
+                Console.WriteLine($"\n{score}");
+                Console.WriteLine("\nMenu Options:\n1.Create New Goal\n2.List Goals");
+                Console.WriteLine("3.Save Goals\n4.Load Goals\n5.Record Goals\n5.Quit");
+                Console.WriteLine("Select From the menu: ");
+            
+                // if (goalResponse  == 1)
+                // {
+                //     SimpleGoal sGoal = new SimpleGoal();
+                //     sGoal.RecordEvent();
+                //     goalList.AddGoal(sGoal);
+                //     continue;
+
+                // }
+                // else if (goalResponse == 2)
+                // {
+                //     EthernalGoal eGoal = new EthernalGoal();
+                //     eGoal.RecordEvent();
+                //     goalList.AddGoal(eGoal);
+                // }
+                // else if (goalResponse == 3)
+                // {
+                //     ChecklistGoal cGoal = new ChecklistGoal();
+                //     cGoal.RecordEvent();
+                //     goalList.AddGoal(cGoal);
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Not a valid choice.");
+                // }
             }
             else if(response == 2)
             {
@@ -61,6 +85,10 @@ class Program
                 string filename = Console.ReadLine();
                 using (StreamWriter outputFile = new StreamWriter(filename))
                 outputFile.WriteLine($"{goalList.DisplayScore()}\n{goalList.DisplayGoal}");
+                //using (StreamWriter outputFile = new StreamWriter(fileName);   
+                //    foreach(Goal goal in goalList){
+                 //       outputFile.WriteLine(goal);
+
             }
             else if(response == 4)
             {
@@ -86,8 +114,8 @@ class Program
                 Console.WriteLine("Not a valid entery.");
             }
 
-            //Console.WriteLine($"\nYou have {pointsCount} points.");
-            Console.WriteLine("Menu Options:\n1.Create New Goal\n2.List Goals");
+            Console.WriteLine($"\n{score}");
+            Console.WriteLine("\nMenu Options:\n1.Create New Goal\n2.List Goals");
             Console.WriteLine("3.Save Goals\n4.Load Goals\n5.Record Goals\n5.Quit");
             Console.WriteLine("Select From the menu: ");
         }
