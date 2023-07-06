@@ -1,9 +1,9 @@
 public class Product
 {
-    string _name;
-    int _id;
-    double _price;
-    int _quantity;
+    private string _name;
+    private int _id;
+    private double _price;
+    private int _quantity;
     public Product(string name, int id, double price, int quantity)
     {
         _name = name;
@@ -14,5 +14,10 @@ public class Product
     public double productPrice()
     {
         return _price * _quantity;
+    }
+    public void productDisplay()
+    {
+        Console.WriteLine($"{_name}, ID:{_id} X {_quantity} = {productPrice}");
+    
     }
 }
