@@ -18,7 +18,14 @@ public class Address
     }
     public bool International()
     {
-        return true;
+        bool usaShip = false;
+        if (_country == "USA")
+        {
+            usaShip = true;
+           
+        }
+        return usaShip;
+        
     }
 
 
