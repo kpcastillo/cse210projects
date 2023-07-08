@@ -1,7 +1,7 @@
 public class Costumer
 {
-    string _name;
-    Address _address;
+    private string _name;
+    private Address _address;
     public Costumer(string name, Address address)
     {
         _name = name;

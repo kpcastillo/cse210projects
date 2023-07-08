@@ -1,9 +1,20 @@
 
 public class Order
 {
-    List<Product> _products = new List<Product>{};
-    Costumer _costumer;
-    Address _address;
+    private List<Product> _products = new List<Product>{};
+    private Costumer _costumer;
+    private Address _address;
+    // public void SetProduct(Product prod)
+    // {
+    //     _products = prod;
+    // }
+    public Order(Costumer costumer, Product product1, Product product2, Product product3)
+    {
+        _costumer = costumer;
+        _products.Add(product1);
+        _products.Add(product2);
+        _products.Add(product3);
+    }
     public void PackagingLabel()
     {
        // A packing label should list the name and product id of each product in the order.
@@ -44,7 +55,7 @@ public class Order
     //USA, then the shipping cost is $5. If the customer does not live in the USA, then the shipping cost is $35.
     {
         double shippingCost = 0;
-        if (Address _address.International)
+        if (_address.International())
         {
             shippingCost = TotalCost() + 5;
         }
@@ -53,6 +64,15 @@ public class Order
             shippingCost = TotalCost() + 35;
         }
         return shippingCost;
+    }
+    public void OrderDisplay()
+    {
+        Console.WriteLine();
+        Console.WriteLine(PackagingLabel);
+        Console.WriteLine(TotalCost());
+        Console.WriteLine(TotalPrice());
+        Console.WriteLine(ShippingLabel);
+        
     }
     
 
