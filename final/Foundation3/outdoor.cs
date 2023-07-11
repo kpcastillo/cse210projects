@@ -1,15 +1,22 @@
 public class OutdoorEvent : Event
 {
     private string _weather;
+    public OutdoorEvent(string title, string description, string date, string time, string address): base(title, description, date, time, address)
+    {}
+    public void SetOutdoorEvent(string weather)
+    {
+        _weather = weather;
+    }
     public void WeatherCard()
     {
-
+        Console.WriteLine($"The expected weather for {_date} is {_weather}");
     }
     public void FullDetailOutdoor()
     {
-       // Full details - Lists all of the above, plus type of event and information specific to that event type. 
-       //For lectures, this includes the speaker name and capacity. 
-       //For receptions this includes an email for RSVP.
-       //For outdoor gatherings, this includes a statement of the weather.
+        Console.WriteLine();
+        Console.WriteLine("OUTDOOR EVENT:");
+        StandarDetail();
+        WeatherCard();
+      
     }
 }

@@ -21,7 +21,7 @@ public class Order
        Console.WriteLine("****************************************************************");
        foreach( Product product in _products)
        {
-           Console.WriteLine(product.productDisplay);
+           product.productDisplay();
        }
        Console.WriteLine($"\nTOTAL: {TotalCost}\n");
        Console.WriteLine("****************************************************************");
@@ -32,7 +32,7 @@ public class Order
         
         Console.WriteLine("****************************************************************");
         Console.WriteLine();
-        Console.WriteLine(_costumer.DisplayCostumer);
+        _costumer.DisplayCostumer();
         Console.WriteLine();
         Console.WriteLine("****************************************************************");
 
@@ -44,7 +44,7 @@ public class Order
         double cost = 0;
         foreach( Product product in _products)
        {
-           Console.WriteLine(product.productPrice);
+           product.productPrice();
            cost =+ product.productPrice();
        }
         return cost;
@@ -68,10 +68,10 @@ public class Order
     public void OrderDisplay()
     {
         Console.WriteLine();
-        Console.WriteLine(PackagingLabel);
+        PackagingLabel();
         Console.WriteLine(TotalCost());
         Console.WriteLine(TotalPrice());
-        Console.WriteLine(ShippingLabel);
+        ShippingLabel();
         
     }
     
