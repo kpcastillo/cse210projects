@@ -1,17 +1,22 @@
 public class Swimming : Activity
 {
     private int _laps;
-    public override int Pace()
+    public Swimming(DateOnly date, string name, int length, int laps) : base (date, name, length)
     {
-        return base.Pace();
+        _name = "Swimming";
+        _laps = laps;
     }
-    public override int Speed()
+    public override double Pace()
     {
-        return base.Speed();
+        return _lenght / Distance();
     }
-    public override int Distance()
+    public override double Speed()
     {
-        return base.Distance();
+        return Distance() / _lenght;
+    }
+    public override double Distance()
+    {
+        return _laps * 50 / 1000;
     }
     public override void GetSummary()
     {

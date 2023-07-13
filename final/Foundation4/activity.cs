@@ -1,22 +1,25 @@
 public abstract class Activity
 {
-    protected string _date;
+    protected DateOnly _date;
+    protected string _name;
     protected int _lenght;
-    protected string _email;
-    public virtual int Distance()
+    //protected string _email;
+    public Activity(DateOnly date, string name, int length)
     {
-        return 1;
+        _date = date;
+        _name = name;
+        _date = date;
+        _lenght = length;
     }
-    public virtual int Speed()
-    {
-        return 1;
-    }
-    public virtual int Pace()
-        {
-            return 1;
-        }
+
+    public abstract double Distance();
+    public abstract double Speed();
+    
+    public abstract double Pace();
+        
     public virtual void GetSummary()
     {
+        Console.WriteLine($"{_date} {_name} ({_lenght}min) - Distance {Distance()}miles, Speed {Speed()}mph, Pace: {Pace()} min per mile.");
 
     }
 }

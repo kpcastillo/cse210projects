@@ -1,16 +1,27 @@
 public class Bicycle : Activity
 {
+
     private int _speed;
-    public override int Distance()
+    public Bicycle(DateOnly date, string name, int length, int speed) : base (date, name, length)
     {
-        return base.Distance();
+        _name = "Bicycle";
+        _speed = speed;
     }
-    public override int Pace()
+    public override double Distance()
     {
-        return base.Pace();
+        return (_speed * _lenght) / 60;
+    }
+    public override double Speed()
+    {
+        return _speed;
+    }
+    public override double Pace()
+    {
+        return 60 / _speed;
     }
     public override void GetSummary()
     {
         base.GetSummary();
     }
+    
 }
